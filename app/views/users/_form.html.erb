@@ -1,0 +1,69 @@
+<div class = "container" id ="form">
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h4>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label 'First Name', class:'form-label'%>
+    <%= form.text_field :first_name, class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Last Name', class:'form-label'%>
+    <%= form.text_field :last_name, class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :username, class:'form-label'%>
+    <%= form.text_field :username, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Email Address', class:'form-label' %>
+    <%= form.email_field :email, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Age', class:'form-label' %>
+    <%= form.number_field :age, class:'custom-range form-control', min:"10", max:"100", step:"1", id:"customRange3" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Password', class:'form-label' %>
+    <%= form.password_field :password , class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Confirm Password', class:'form-label' %>
+    <%= form.password_field :password_confirmation  , class:'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :agree, class:'form-label' %>
+    <%= form.check_box :agree, class:"form-check-input" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-primary'%>
+  </div>
+<% end %>
+</div>
+
+<style>
+  #form {
+    width: 50%;
+  }
+  li {
+    color: red;
+  }
+</style>
+

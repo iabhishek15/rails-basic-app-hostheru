@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div id = "tasks" class = "container">
+ <table class="table">
+    <tbody> 
+      <%= link_to 'Edit', edit_user_path(@user) %> |
+      <%= link_to 'Back', users_path %>
+      <tr>
+        <th scope="row">Full Name:</th>
+        <td><%= @user.full_name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Username:</th>
+        <td><%= @user.username  %></td>
+      </tr>
+      <tr>
+        <th scope="row">Email:</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th scope="row">Age:</th>
+        <td><%= @user.age %></td>
+      </tr>
+      <tr>
+        <th scope="row">Password:</th>
+        <td><%= @user.password %></td>
+      </tr>
+      <tr>
+        <th scope="row">Agree:</th>
+        <td><%= @user.agree %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>  
+<style>
+ p{
+  text-align: center;
+ }
+</style>
+
